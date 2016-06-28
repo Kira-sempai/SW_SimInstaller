@@ -3,7 +3,7 @@
 	<?include variables.wxi ?>
 	<?define STDC_Title="Эмулятор SmartWeb S" ?>
 	<?define LTDC_Title="Эмулятор SmartWeb L" ?>
-	<?define XHCC_Title="Эмулятор SmartWeb X" ?>
+	<?define XHCC_Title="Эмулятор SmartWeb X (требуется WinPcap)" ?>
 
 	<Fragment>
 		<DirectoryRef Id="INSTALLLOCATION" />
