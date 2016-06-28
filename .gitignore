@@ -8,3 +8,5 @@ Thumbs.db
 /msi/*.msi
 /msi/*.wixpdb
 /doc/*.pdf
+
+*.log
