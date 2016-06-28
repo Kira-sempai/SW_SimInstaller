@@ -1,0 +1,10 @@
+# Windows dbs
+Thumbs.db
+
+#Installer
+/*.wixobj
+/src/*.dll
+/src/*.exe
+/msi/*.msi
+/msi/*.wixpdb
+/doc/*.pdf
