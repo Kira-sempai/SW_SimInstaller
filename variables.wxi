@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Include>
+
+ <?define ProductName="Пакет эмуляторов SmartWeb" ?>
+ <?define ProductVersion="1.0.0.0" ?>
+ <?define ProductCode="AE2744FD-6C5E-442F-9CEC-D308A3453A5A" ?>
+ <?define UpgradeCode="DED7E8D0-AFBF-42DE-BFD5-6A72FB932C9A" ?>
+ <?define Manufacturer="Тепломонитор" ?>
+
+</Include>

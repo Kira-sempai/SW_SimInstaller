@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+<?include variables.wxi ?>
+    <Product Id="$(var.ProductCode)" Name="$(var.ProductName)" Language="1049" Version="$(var.ProductVersion)" Manufacturer="$(var.Manufacturer)" UpgradeCode="$(var.UpgradeCode)" Codepage="Windows-1251">
+        <Package InstallerVersion="200" Compressed="yes" />
+        <Media Id="1" Cabinet="simple.cab" EmbedCab="yes" />
+
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLLOCATION" Name="Teplomonitor">
+					<Directory Id="MANUALLOCATION" Name="Документация"/>
+				</Directory>
+			</Directory>
+
+			<Directory Id="ProgramMenuFolder"/>
+			<Directory Id="DesktopFolder"/>
+		</Directory>
+
+		<FeatureRef Id="RunTimeFeature"/>
+		<FeatureRef Id="STDCFeature"/>
+		<FeatureRef Id="LTDCFeature"/>
+		<FeatureRef Id="XHCCFeature"/>
+		<FeatureRef Id="ManualFeature"/>
+
+		<Property Id="WIXUI_INSTALLDIR" Value="INSTALLLOCATION" ></Property>
+		<UIRef Id="WixUI_Custom"/>
+
+    </Product>
+</Wix>

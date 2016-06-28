@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+	<Fragment>
+		<DirectoryRef Id="INSTALLLOCATION" FileSource="src">
+			<Component Id="runtime" DiskId="1" KeyPath="yes" Guid="80233525-426d-4c4a-8f6d-6706434d569d">
+				<File Id="LIBGCC_S_DW2_1.DLL" Name="libgcc_s_dw2-1.dll"/>
+				<File Id="LIBSTDC___6.DLL" Name="libstdc++-6.dll"/>
+				<File Id="LIBWINPTHREAD_1.DLL" Name="libwinpthread-1.dll" />
+				<File Id="QTCORE4.DLL_1" Name="QtCore4.dll"/>
+				<File Id="QTGUI4.DLL_1" Name="QtGui4.dll"/>
+				<File Id="QTSCRIPT4.DLL_1" Name="QtScript4.dll"/>
+				<File Id="PCANBASIC.DLL_1" Name="PCANBasic.dll"/>
+				<File Id="PYTHON27.DLL_1" Name="python27.dll"/>
+			</Component>
+
+			<Component Id="STDC" DiskId="1" KeyPath="yes" Guid="931477ab-a0cd-466f-9693-1b7ad3357caa">
+				<File Id="STDC_V3_SOREL_S20V3R1_QT_SIM.EXE" Name="STDC-V3-Sorel-S20v3r1-QT-sim.exe" />
+			</Component>
+
+			<Component Id="LTDC" DiskId="1" KeyPath="yes" Guid="59233b4a-2bcc-4468-9c41-9dea6e376917">
+				<File Id="LTDCV3_SOREL_S40V3R1_QT_SIM.EXE" Name="LTDCv3-Sorel-S40v3r1-QT-sim.exe" />
+			</Component>
+			
+			<Component Id="XHCC" DiskId="1" KeyPath="yes" Guid="59233b4a-2bcc-4468-9c41-9dea6e376918">
+				<File Id="XHCC_S61V2_SOREL_S61V2R1_QT_SIM.EXE" Name="XHCC-S61v2-Sorel-S61v2r1-QT-sim.exe" />
+			</Component>
+
+			<Directory Id="Docs" Name="Документация" FileSource="doc">
+				<Component Id="Manual" Guid="290EB099-C286-4116-8C0C-C94AD7460868">
+					<File Id="TM_SmartWeb_manual" Name="TM_SmartWeb_manual.pdf" />
+				</Component>
+			</Directory>
+		</DirectoryRef>
+	</Fragment>
+</Wix>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<?include variables.wxi ?>
+	<?define STDC_Title="Эмулятор SmartWeb S" ?>
+	<?define LTDC_Title="Эмулятор SmartWeb L" ?>
+	<?define XHCC_Title="Эмулятор SmartWeb X" ?>
+
+	<Fragment>
+		<DirectoryRef Id="INSTALLLOCATION" />
+
+		<Feature Id="RunTimeFeature" Title="Run time" Description="Run time libraries" Level="1" Absent="disallow" AllowAdvertise="no" ConfigurableDirectory="INSTALLLOCATION">
+			<ComponentRef Id="runtime" />
+		</Feature>
+
+		<Feature Id="ManualFeature" Title="Документация" Description="Руководство пользователя" Level="1">
+			<ComponentRef Id="Manual" />
+			<ComponentRef Id="MenuShortcutManual" />
+		</Feature>
+
+		<Feature Id="STDCFeature" Title="$(var.STDC_Title)" Description="$(var.STDC_Title)" Level="1" ConfigurableDirectory="INSTALLLOCATION">
+			<ComponentRef Id="STDC" />
+			<ComponentRef Id="MenuShortcutSTDC" />
+			<ComponentRef Id="DesktopShortcutSTDC" />
+			<ComponentRef Id="RemoveShortcut" />
+		</Feature>
+
+		<Feature Id="LTDCFeature" Title="$(var.LTDC_Title)" Description="$(var.LTDC_Title)" Level="1" ConfigurableDirectory="INSTALLLOCATION">
+			<ComponentRef Id="LTDC" />
+			<ComponentRef Id="MenuShortcutLTDC" />
+			<ComponentRef Id="DesktopShortcutLTDC" />
+			<ComponentRef Id="RemoveShortcut" />
+		</Feature>
+		
+		<Feature Id="XHCCFeature" Title="$(var.XHCC_Title)" Description="$(var.XHCC_Title)" Level="1" ConfigurableDirectory="INSTALLLOCATION">
+			<ComponentRef Id="XHCC" />
+			<ComponentRef Id="MenuShortcutXHCC" />
+			<ComponentRef Id="DesktopShortcutXHCC" />
+			<ComponentRef Id="RemoveShortcut" />
+		</Feature>
+	</Fragment>
+</Wix>
+

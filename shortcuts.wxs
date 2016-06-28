@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <?include variables.wxi?>
+
+	<Fragment>
+
+	<?define STDC_Name="Эмулятор SmartWeb S" ?>
+	<?define LTDC_Name="Эмулятор SmartWeb L" ?>
+	<?define XHCC_Name="Эмулятор SmartWeb X" ?>
+	<?define Uninstall="Удалить" ?>
+	<?define Manual="Инструкция" ?>
+
+	<DirectoryRef Id="MANUALLOCATION" />
+
+	<Icon Id="simulator.ico" SourceFile="src\simulator.ico" />
+
+	<DirectoryRef Id="ProgramMenuFolder">
+		<Directory Id="ManufacturerProgramsFolder" Name="$(var.Manufacturer)">
+			<Component Id="RemoveShortcut" Guid="F02C6AB4-4B03-4BE5-88D3-C5F6928A0B10">
+				<Shortcut Id="MenuUninstall"             
+					Name="$(var.Uninstall)"
+					Description="$(var.Uninstall)"
+					Target="[System64Folder]msiexec.exe"
+					Arguments="/x [ProductCode]"/>
+				<RemoveFolder Id="RemoveMenuUninstall" On="uninstall"/>
+				<RegistryValue Root="HKCU" Key="Software\$(var.Manufacturer)\$(var.ProductName)" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+			</Component>
+
+			<Component Id="MenuShortcutSTDC" Guid="FC635D58-869E-4DB3-9C0F-CA6CB8A8C7B3">
+				<Shortcut Id="MenuSTDC"
+				Name="$(var.STDC_Name)"
+				Description="$(var.STDC_Name)"
+				Target="[INSTALLLOCATION]STDC-V3-Sorel-S20v3r1-QT-sim.exe"
+				WorkingDirectory="INSTALLLOCATION"
+				Icon ="simulator.ico"/>
+				<RemoveFolder Id="RemoveMenuSTDC" On="uninstall"/>
+				<RegistryValue Root="HKCU" Key="Software\$(var.Manufacturer)\$(var.ProductName)" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+			</Component>
+
+		<Component Id="MenuShortcutLTDC" Guid="292E6EA8-1F06-4A05-9FFB-7CEC4BC7A43F">
+			<Shortcut Id="MenuLTDC"
+				Name="$(var.LTDC_Name)"
+				Description="$(var.LTDC_Name)"
+				Target="[INSTALLLOCATION]LTDCv3-Sorel-S40v3r1-QT-sim.exe"
+				WorkingDirectory="INSTALLLOCATION"
+				Icon ="simulator.ico"/>
+				<RemoveFolder Id="RemoveMenuLTDC" On="uninstall"/>
+				<RegistryValue Root="HKCU" Key="Software\$(var.Manufacturer)\$(var.ProductName)" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+		</Component>
+		
+		<Component Id="MenuShortcutXHCC" Guid="292E6EA8-1F06-4A05-9FFB-7CEC4BC7A43E">
+			<Shortcut Id="MenuXHCC"
+				Name="$(var.XHCC_Name)"
+				Description="$(var.XHCC_Name)"
+				Target="[INSTALLLOCATION]XHCC-S61v2-Sorel-S61v2r1-QT-sim.exe"
+				WorkingDirectory="INSTALLLOCATION"
+				Icon ="simulator.ico"/>
+				<RemoveFolder Id="RemoveMenuXHCC" On="uninstall"/>
+				<RegistryValue Root="HKCU" Key="Software\$(var.Manufacturer)\$(var.ProductName)" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+		</Component>
+
+		<Component Id="MenuShortcutManual" Guid="396596EE-F5A3-4E52-84B3-D699B186603D">
+			<Shortcut Id="MenuManual"
+				Name="$(var.Manual)"
+				Description="$(var.Manual)"
+				Target="[MANUALLOCATION]TM_SmartWeb_manual.pdf"
+				WorkingDirectory="MANUALLOCATION"/>
+				<RemoveFolder Id="RemoveMenuManual" On="uninstall"/>
+				<RegistryValue Root="HKCU" Key="Software\$(var.Manufacturer)\$(var.ProductName)" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+		</Component>
+
+		</Directory>
+	</DirectoryRef>
+
+    <DirectoryRef Id="DesktopFolder">
+		<Component Id="DesktopShortcutSTDC" Guid="FC8810B6-EE08-4201-81A6-96F1A2A2C54E">
+			<Shortcut Id="DesktopSTDC"
+				Name="$(var.STDC_Name)"
+				Description="$(var.STDC_Name)"
+				Target="[INSTALLLOCATION]STDC-V3-Sorel-S20v3r1-QT-sim.exe"
+				WorkingDirectory="INSTALLLOCATION"
+				Icon ="simulator.ico"/>
+				<RemoveFolder Id="RemoveDesktopSTDC" On="uninstall"/>
+				<RegistryValue Root="HKCU" Key="Software\$(var.Manufacturer)\$(var.ProductName)" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+		</Component>
+
+		<Component Id="DesktopShortcutLTDC" Guid="C1FE96E5-E4A5-4B2B-957A-CBCE7A892411">
+			<Shortcut Id="DesktopLTDC"
+				Name="$(var.LTDC_Name)"
+				Description="$(var.LTDC_Name)"
+				Target="[INSTALLLOCATION]LTDCv3-Sorel-S40v3r1-QT-sim.exe"
+				WorkingDirectory="INSTALLLOCATION"
+				Icon ="simulator.ico"/>
+				<RemoveFolder Id="RemoveDesktopLTDC" On="uninstall"/>
+				<RegistryValue Root="HKCU" Key="Software\$(var.Manufacturer)\$(var.ProductName)" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+		</Component>
+
+		<Component Id="DesktopShortcutXHCC" Guid="C1FE96E5-E4A5-4B2B-957A-CBCE7A892412">
+			<Shortcut Id="DesktopXHCC"
+				Name="$(var.XHCC_Name)"
+				Description="$(var.XHCC_Name)"
+				Target="[INSTALLLOCATION]XHCC-S61v2-Sorel-S61v2r1-QT-sim.exe"
+				WorkingDirectory="INSTALLLOCATION"
+				Icon ="simulator.ico"/>
+				<RemoveFolder Id="RemoveDesktopXHCC" On="uninstall"/>
+				<RegistryValue Root="HKCU" Key="Software\$(var.Manufacturer)\$(var.ProductName)" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+		</Component>
+    </DirectoryRef>
+    
+	</Fragment>
+</Wix>
+
