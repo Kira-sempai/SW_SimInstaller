@@ -29,8 +29,8 @@ copy "%SWXDIR%\XHCC-Sorel-S61v2r1-QT-sim.exe"		"src"
 ::xcopy /S /E	"C:\development\xhcc\web\teplomonitor-server\server"								"C:\Tools\SW_SimInstaller\src\WEB" /I
 ::copy		"C:\development\xhcc\web\teplomonitor-server\sitemenu.txt"							"C:\Tools\SW_SimInstaller\src"
 
-copy "C:\Windows\System32\PCANBasic.dll"		"src"
-copy "C:\Windows\System32\python27.dll"			"src"
+copy "%SWXDIR%\PCANBasic.dll"					"src"
+copy "%SWXDIR%\python27.dll"					"src"
 copy "%QTDIR%\bin\libgcc_s_dw2-1.dll"			"src"
 copy "%QTDIR%\bin\libstdc++-6.dll"				"src"
 copy "%QTDIR%\bin\libwinpthread-1.dll"			"src"
