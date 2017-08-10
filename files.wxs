@@ -23,7 +23,7 @@
 			</Component>
 			
 			<Component Id="XHCC" DiskId="1" KeyPath="yes" Guid="59233b4a-2bcc-4468-9c41-9dea6e376918">
-				<File Id="XHCC_S61V2_SOREL_S61V2R1_QT_SIM.EXE" Name="XHCC-S61v2-Sorel-S61v2r1-QT-sim.exe" />
+				<File Id="XHCC_SOREL_S61V2R1_QT_SIM.EXE" Name="XHCC-Sorel-S61v2r1-QT-sim.exe" />
 			</Component>
 
 			<Directory Id="Docs" Name="Документация" FileSource="doc">

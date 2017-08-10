@@ -53,7 +53,7 @@
 			<Shortcut Id="MenuXHCC"
 				Name="$(var.XHCC_Name)"
 				Description="$(var.XHCC_Name)"
-				Target="[INSTALLLOCATION]XHCC-S61v2-Sorel-S61v2r1-QT-sim.exe"
+				Target="[INSTALLLOCATION]XHCC-Sorel-S61v2r1-QT-sim.exe"
 				WorkingDirectory="INSTALLLOCATION"
 				Icon ="simulator.ico"/>
 				<RemoveFolder Id="RemoveMenuXHCC" On="uninstall"/>
@@ -100,7 +100,7 @@
 			<Shortcut Id="DesktopXHCC"
 				Name="$(var.XHCC_Name)"
 				Description="$(var.XHCC_Name)"
-				Target="[INSTALLLOCATION]XHCC-S61v2-Sorel-S61v2r1-QT-sim.exe"
+				Target="[INSTALLLOCATION]XHCC-Sorel-S61v2r1-QT-sim.exe"
 				WorkingDirectory="INSTALLLOCATION"
 				Icon ="simulator.ico"/>
 				<RemoveFolder Id="RemoveDesktopXHCC" On="uninstall"/>
